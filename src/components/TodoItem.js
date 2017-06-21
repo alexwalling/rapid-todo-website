@@ -1,43 +1,64 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import TodoCheckbox from './TodoCheckbox';
-import TodoText from './TodoText'
+import TodoText from './TodoText';
+import { ajax } from 'jquery';
 
 class TodoItem extends Component {
 	constructor() {
 		super();
 		this.state = {
 			isDone: false,
-			isDoneClass: 'notDone',
-			doneText: 'Not Done'
+			id:''
 		}
 	}
 	update(e) {
-		if(this.state.isDoneClass === 'done'){
+		console.log(this.state.isDone);
+		if(this.state.isDone){
+			ajax({
+	          method: "GET",
+	          url: 'http://localhost:9000/api/post/updateNoteState',
+	          data: {content:false, id:this.props.id}
+	        })
 			this.setState({
 				isDone: false,
-				isDoneClass: 'notDone',
-				doneText: 'Not Done'
 			})
 		} else {
-			this.setState({
+			ajax({
+	          method: "GET",
+	          url: 'http://localhost:9000/api/post/updateNoteState',
+	          data: {content:true, id:this.props.id}
+	        })
+	  		this.setState({
 				isDone: true,
-				isDoneClass: 'done',
-				doneText: 'Done'
 			})
 		}
-		
+	}
+	componentWillMount(){
+		this.setState({
+			isDone:this.props.isDone,
+			id:this.props.id
+		})
+		console.log(this.props.isDone);
 	}
 	unmount(){
 		ReactDOM.unmountComponentAtNode(document.getElementById('a'))
 	}
 	render() {
-		return (
-			<div id='a' onClick={this.update.bind(this)}>
-				<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
-				<TodoText person={this.props.person} isDoneClass={this.state.isDoneClass}/>
-			</div>
-		);
+		if(this.state.isDone){
+			return (
+				<div id='a' onClick={this.update.bind(this)}>
+					<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
+					<TodoText content={this.props.content} isDoneClass="done"/>
+				</div>
+			);
+		} else {
+			return (
+				<div id='a' onClick={this.update.bind(this)}>
+					<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
+					<TodoText content={this.props.content} isDoneClass="notDone"/>
+				</div>
+			);
+		}
 	}
 }
 //<TodoCheckbox />

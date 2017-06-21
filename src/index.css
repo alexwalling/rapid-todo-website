@@ -29,6 +29,11 @@ input.done-button {
 	margin-right:10px;
 }
 
+#a {
+	width: 500px;
+    background: lightblue;
+}
+
 .done {
 	color:green;
 	text-decoration: line-through;
