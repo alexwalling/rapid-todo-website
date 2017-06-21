@@ -24,7 +24,7 @@ class TodoList extends Component {
 
         ajax({
           method: "GET",
-          url: 'http://localhost:9000/api/get/singleNote'
+          url: '${location.origin}/api/get/singleNote'
         }).then((res) => {
           this.setState({items: res})
         });

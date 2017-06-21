@@ -15,7 +15,7 @@ class TodoItem extends Component {
 		if(this.state.isDone){
 			ajax({
 	          method: "GET",
-	          url: 'http://localhost:9000/api/post/updateNoteState',
+	          url: '${location.origin}/api/post/updateNoteState',
 	          data: {content:false, id:this.props.id}
 	        })
 			this.setState({
@@ -24,7 +24,7 @@ class TodoItem extends Component {
 		} else {
 			ajax({
 	          method: "GET",
-	          url: 'http://localhost:9000/api/post/updateNoteState',
+	          url: '${location.origin}/api/post/updateNoteState',
 	          data: {content:true, id:this.props.id}
 	        });
 	  		this.setState({
