@@ -34,7 +34,6 @@ class TodoList extends Component {
 		let items = this.state.items
 		//let items = ['hello','hello2','hello3','hello4','hello5','hello6','hello7','hello8','hello9','hello10','hello11','hello12','hello13','hello14','hello15','hello16','hello17','hello18','hello19','hello20','hello21']
     if(items.length != 0){
-      console.log(items);
       return (
         <div>
           {items.map(item => <TodoItem key={item._id} id={item._id} content={item.content} isDone={item.isDone}/> )}
