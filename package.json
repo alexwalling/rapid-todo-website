@@ -9,6 +9,7 @@
     "mongoose": "^4.10.6",
     "morgan": "^1.8.2",
     "nodemon": "^1.11.0",
+    "rapidapi-connect": "0.0.4",
     "react": "^15.6.0",
     "react-dom": "^15.6.0",
     "react-router": "^2.0.1"

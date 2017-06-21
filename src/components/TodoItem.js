@@ -12,7 +12,6 @@ class TodoItem extends Component {
 		}
 	}
 	update(e) {
-		console.log(this.state.isDone);
 		if(this.state.isDone){
 			ajax({
 	          method: "GET",
@@ -27,18 +26,17 @@ class TodoItem extends Component {
 	          method: "GET",
 	          url: 'http://localhost:9000/api/post/updateNoteState',
 	          data: {content:true, id:this.props.id}
-	        })
+	        });
 	  		this.setState({
 				isDone: true,
-			})
+			});
 		}
 	}
 	componentWillMount(){
 		this.setState({
 			isDone:this.props.isDone,
 			id:this.props.id
-		})
-		console.log(this.props.isDone);
+		});
 	}
 	unmount(){
 		ReactDOM.unmountComponentAtNode(document.getElementById('a'))
