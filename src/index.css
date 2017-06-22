@@ -23,22 +23,39 @@ button.done-button {
 	width:75px;
 }
 
+button {
+	margin-left: 15%;
+	margin-top: 2%;
+	margin-bottom: 7%;
+}
+
 input.done-button {
 	float:left;
 	margin-left:15px;
 	margin-right:10px;
+	margin-top: 3.5%;
+	margin-bottom: 3.5%;
 }
 
 #a {
-	width: 500px;
-    background: lightblue;
+	width: 50%;
+    background: lightgrey;
+    margin: auto;
+    border-radius: 10px;
 }
 
 .done {
-	color:green;
+	color:black;
 	text-decoration: line-through;
+	padding-top: 3%;
+	padding-bottom: 3%;
 }
 
 .notDone {
 	color:black;
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+.TodoList{
 }

@@ -15,7 +15,8 @@ class TodoItem extends Component {
 		if(this.state.isDone){
 			ajax({
 	          method: "GET",
-	          url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/post/updateNoteState',
+	          //url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/post/updateNoteState',
+	          url: 'http://localhost:9000/api/post/updateNoteState',
 	          data: {content:false, id:this.props.id}
 	        })
 			this.setState({
@@ -24,7 +25,8 @@ class TodoItem extends Component {
 		} else {
 			ajax({
 	          method: "GET",
-	          url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/post/updateNoteState',
+	          //url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/post/updateNoteState',
+	          url: 'http://localhost:9000/api/post/updateNoteState',
 	          data: {content:true, id:this.props.id}
 	        });
 	  		this.setState({
@@ -45,15 +47,21 @@ class TodoItem extends Component {
 		if(this.state.isDone){
 			return (
 				<div id='a' onClick={this.update.bind(this)}>
-					<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
-					<TodoText content={this.props.content} isDoneClass="done"/>
+					<div className="new">
+					</div>
+						<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
+						<TodoText content={this.props.content} isDoneClass="done"/>
+					
 				</div>
 			);
 		} else {
 			return (
 				<div id='a' onClick={this.update.bind(this)}>
-					<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
-					<TodoText content={this.props.content} isDoneClass="notDone"/>
+					<div className="new">
+					</div>
+						<input id="checkBox" className="done-button" type="checkbox" checked={this.state.isDone} onClick={this.update.bind(this)}/>
+						<TodoText content={this.props.content} isDoneClass="notDone"/>
+					
 				</div>
 			);
 		}
