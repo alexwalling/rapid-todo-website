@@ -27,6 +27,7 @@ class TodoItem extends Component {
 	          method: "GET",
 	          url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/post/updateNoteState',
 	          //url: 'http://localhost:9000/api/post/updateNoteState',
+	          
 	          data: {content:true, id:this.props.id}
 	        });
 	  		this.setState({
