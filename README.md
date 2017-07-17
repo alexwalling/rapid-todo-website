@@ -11,7 +11,7 @@ https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-ex
 
 
 ## TODO:
-	###General
+	### General
 - [x] Implement better data storage solution
 - [x] Build simple react components
 - [x] Host on AWS
@@ -22,11 +22,11 @@ https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-ex
 - [x] combine slack slash command and react app into one git directory
 
 
-	###Slack
+	### Slack
 - [x] Finish response implementation
-	###Email
+	### Email
 - [x] Everything
-	###SMS
+	### SMS
 - [x] Receiving a message
 - [x] Storing a message
 - [x] Sending message WITH data from note/todo list
