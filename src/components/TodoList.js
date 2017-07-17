@@ -12,8 +12,8 @@ class TodoList extends Component {
 	componentWillMount(){
         ajax({
           method: "GET",
-          url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/get/singleNote'
-          //url: 'http://localhost:9000/api/get/singleNote'
+          //url: 'http://ec2-34-211-91-3.us-west-2.compute.amazonaws.com/api/get/singleNote'
+          url: 'http://localhost:9000/api/get/singleNote'
         }).then((res) => {
           this.setState({items: res})
         });
