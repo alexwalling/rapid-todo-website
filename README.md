@@ -1,6 +1,5 @@
 # Rapid Todo React Website
 
-
 ## Starting the server
 npm run build
 node server
@@ -11,7 +10,9 @@ https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-ex
 https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-express-js-8fa658bf892d
 
 
-# TODO:
+## TODO:
+	###General
+- [x] Implement better data storage solution
 - [x] Build simple react components
 - [x] Host on AWS
 - [x] setup mongo DB
@@ -19,3 +20,13 @@ https://medium.com/@patriciolpezjuri/using-create-react-app-with-react-router-ex
 - [x] abstract DB credentials from app
 - [ ] add text box to submit new item
 - [x] combine slack slash command and react app into one git directory
+
+
+	###Slack
+- [x] Finish response implementation
+	###Email
+- [x] Everything
+	###SMS
+- [x] Receiving a message
+- [x] Storing a message
+- [x] Sending message WITH data from note/todo list
